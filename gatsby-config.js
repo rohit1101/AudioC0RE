@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "AudioC0Re",
+    siteUrl: "",
   },
   plugins: [
     {
@@ -23,4 +24,4 @@ module.exports = {
       __key: "images",
     },
   ],
-};
+}

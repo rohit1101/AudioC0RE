@@ -1,8 +1,8 @@
 import React from "react"
 import Container from "../components/Container"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-const query = graphql``
+// const query = graphql``
 
 const Collections = () => (
   <Container>

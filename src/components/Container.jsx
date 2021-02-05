@@ -11,7 +11,8 @@ const pageStyles = {
   background: "papayawhip",
 }
 
-function Container({ children }) {
+function Container({ children, query }) {
+  console.log(query)
   return (
     <div style={pageStyles}>
       <div style={{ display: "flex", justifyContent: "space-between" }}>

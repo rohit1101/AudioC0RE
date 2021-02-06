@@ -1,13 +1,33 @@
 import React from "react"
 import Container from "../components/Container"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
-const Collections = () => (
-  <Container>
-    <Link to="/collections/asgard">Asgard</Link>{" "}
-    <Link to="/collections/novacorp">Nova Corp</Link>{" "}
-    <Link to="/collections/vormir">Vormir</Link>
-  </Container>
-)
+export const query = graphql`
+  query {
+    allContentfulCity {
+      edges {
+        node {
+          gatsbyPath(filePath: "/collections/{contentfulCity.name}")
+          name
+        }
+      }
+    }
+  }
+`
+
+function Collections(props) {
+  const { data } = props
+  return (
+    <Container>
+      {data.allContentfulCity.edges.map((item) => {
+        return (
+          <div>
+            <Link to={item.node.gatsbyPath}>{item.node.name}</Link>
+          </div>
+        )
+      })}
+    </Container>
+  )
+}
 
 export default Collections
